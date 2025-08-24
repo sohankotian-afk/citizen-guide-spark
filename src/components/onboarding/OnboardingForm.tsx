@@ -46,6 +46,18 @@ export function OnboardingForm({ onComplete }: OnboardingFormProps) {
     }
   };
 
+  const handleReset = () => {
+    setFormData({
+      name: "",
+      dateOfBirth: "",
+      state: "",
+      hasAadhaar: false,
+      hasPAN: false,
+      hasVoterID: false
+    });
+    setCurrentStep(1);
+  };
+
   const isStepValid = () => {
     switch (currentStep) {
       case 1:
@@ -197,6 +209,16 @@ export function OnboardingForm({ onComplete }: OnboardingFormProps) {
             className="flex-1 bg-gradient-primary hover:bg-primary-hover"
           >
             {currentStep === totalSteps ? "Complete" : "Next"}
+          </Button>
+        </div>
+        
+        <div className="text-center">
+          <Button 
+            variant="ghost" 
+            onClick={handleReset}
+            className="text-sm text-muted-foreground hover:text-foreground"
+          >
+            Clear Form
           </Button>
         </div>
       </CardContent>
