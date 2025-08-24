@@ -6,6 +6,7 @@ import { Dashboard } from "@/components/dashboard/Dashboard";
 import { DocumentGuide } from "@/components/guides/DocumentGuide";
 import { Quiz } from "@/components/quiz/Quiz";
 import { FAQ } from "@/components/faq/FAQ";
+import { AzureTranslatorDemo } from "@/components/AzureTranslatorDemo";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { UserProfile } from "@/types";
 import { toast } from "@/hooks/use-toast";
@@ -58,7 +59,12 @@ const Index = () => {
   const renderContent = () => {
     switch (appState) {
       case 'landing':
-        return <HeroSection onGetStarted={handleGetStarted} />;
+        return (
+          <div className="space-y-8">
+            <HeroSection onGetStarted={handleGetStarted} />
+            <AzureTranslatorDemo />
+          </div>
+        );
       
       case 'onboarding':
         return <OnboardingForm onComplete={handleOnboardingComplete} />;

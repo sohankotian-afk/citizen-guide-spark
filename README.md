@@ -50,6 +50,12 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
+## Azure Integration (Mock)
+This project includes a **mock Azure Translator service**.
+It simulates how the site would connect to Azure Translator API.
+Due to account restrictions, it returns labeled mock outputs instead of real translations.
+In production, this would be swapped with real Azure Translator API calls.
+
 ## What technologies are used for this project?
 
 This project is built with:
