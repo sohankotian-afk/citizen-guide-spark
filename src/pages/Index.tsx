@@ -46,6 +46,15 @@ const Index = () => {
     setAppState('dashboard');
   };
 
+  const handleLogout = () => {
+    setUserProfile(null);
+    setAppState('landing');
+    toast({
+      title: "Profile cleared",
+      description: "You can now create a new profile.",
+    });
+  };
+
   const renderContent = () => {
     switch (appState) {
       case 'landing':
@@ -124,6 +133,12 @@ const Index = () => {
                 }`}
               >
                 FAQ
+              </button>
+              <button 
+                onClick={handleLogout}
+                className="px-3 py-1.5 rounded-md text-sm transition-colors text-destructive hover:bg-destructive hover:text-destructive-foreground"
+              >
+                New Profile
               </button>
             </div>
           </nav>
